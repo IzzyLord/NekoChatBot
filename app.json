@@ -14,15 +14,17 @@
   "env": {
     "bot_token": {
            "description": "Your Bot's Api Token ,Get it from @BotFather",
+           "value": "1996086754:AAEDGgUAaaQWSZ_q6d-7fuUe70JJGjUejqA",
            "required": true
     },
     "ARQ_API_KEY": {
            "description": "Get this from @ARQRobot",
+           "value": "LYLGCC-ITDZTL-FNFSPP-DJNJDP-ARQ",
            "required": true
     },
     "LANGUAGE": {
            "description": "Language of Chat Bot ,list --> https://py-googletrans.readthedocs.io/en/latest/#googletrans-languages",
-           "value": "en",
+           "value": "id",
            "required": true
     },
     "ARQ_API_BASE_URL": {
