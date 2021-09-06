@@ -53,7 +53,7 @@ async def type_and_send(message):
 @Neko.on_message(filters.command("repo") & ~filters.edited)
 async def repo(_, message):
     await message.reply_text(
-        "[GitHub](https://github.com/IzxyLord/NekoChatBot)"
+        "[GitHub](https://github.com/IzzyLord/NekoChatBot)"
         + " | [Group](t.me/jawravirtul)",
         disable_web_page_preview=True,
     )
