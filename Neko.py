@@ -13,7 +13,7 @@ if is_config:
 else:
     from sample_config import *
 
-luna = Client(
+neko = Client(
     ":memory:",
     bot_token=bot_token,
     api_id=6,
@@ -50,7 +50,7 @@ async def type_and_send(message):
     await message._client.send_chat_action(chat_id, "cancel")
 
 
-@Neko.on_message(filters.command("repo") & ~filters.edited)
+@neko.on_message(filters.command("repo") & ~filters.edited)
 async def repo(_, message):
     await message.reply_text(
         "[GitHub](https://github.com/IzzyLord/NekoChatBot)"
@@ -59,14 +59,14 @@ async def repo(_, message):
     )
 
 
-@Neko.on_message(filters.command("help") & ~filters.edited)
+@neko.on_message(filters.command("help") & ~filters.edited)
 async def start(_, message):
-    await Neko.send_chat_action(message.chat.id, "typing")
+    await neko.send_chat_action(message.chat.id, "typing")
     await sleep(2)
     await message.reply_text("/repo - Get Repo Link")
 
 
-@Neko.on_message(
+@neko.on_message(
     ~filters.private
     & filters.text
     & ~filters.command("help")
@@ -91,7 +91,7 @@ async def chat(_, message):
     await type_and_send(message)
 
 
-@Neko.on_message(
+@neko.on_message(
     filters.private & ~filters.command("help") & ~filters.edited
 )
 async def chatpm(_, message):
@@ -105,7 +105,7 @@ async def main():
     session = ClientSession()
     arq = ARQ(ARQ_API_BASE_URL, ARQ_API_KEY, session)
 
-    await Neko.start()
+    await neko.start()
     print(
         """
 -----------------
